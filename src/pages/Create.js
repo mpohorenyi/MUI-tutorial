@@ -1,9 +1,9 @@
 import React from "react";
-import { Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 
 export default function Create() {
   return (
-    <div>
+    <Container>
       <Typography
         variant="h6"
         component="h1"
@@ -12,6 +12,14 @@ export default function Create() {
       >
         Create a New Note
       </Typography>
-    </div>
+
+      <Button 
+        type="submit" 
+        color="secondary"
+        variant="contained"
+      >
+        Submit
+      </Button>
+    </Container>
   );
 }
