@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Container, Typography } from "@mui/material";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 export default function Create() {
   return (
@@ -17,6 +18,7 @@ export default function Create() {
         type="submit" 
         color="secondary"
         variant="contained"
+        endIcon={<KeyboardArrowRightIcon />}
       >
         Submit
       </Button>
