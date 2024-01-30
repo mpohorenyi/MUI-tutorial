@@ -1,13 +1,31 @@
 import React, { useState } from "react";
-import { Button, Container, TextField, Typography } from "@mui/material";
+import {
+  Button,
+  Container,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Radio,
+  RadioGroup,
+  TextField,
+  Typography,
+} from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 export default function Create() {
-  const [title, setTitle] = useState('');
-  const [details, setDetails] = useState('');
+  const [title, setTitle] = useState("");
+  const [details, setDetails] = useState("");
+  const [category, setCategory] = useState('todos');
 
   const [isTitleError, setIsTitleError] = useState(false);
   const [isDetailsError, setIsDetailsError] = useState(false);
+
+  const classes = {
+    field: {
+      my: 2,
+      display: "block",
+    },
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,8 +39,8 @@ export default function Create() {
 
     console.log(title, details);
 
-    setTitle('');
-    setDetails('');
+    setTitle("");
+    setDetails("");
   };
 
   return (
@@ -40,10 +58,7 @@ export default function Create() {
         <TextField
           value={title}
           onChange={(event) => setTitle(event.target.value)}
-          sx={{
-            my: 2,
-            display: "block",
-          }}
+          sx={classes.field}
           label="Note Title"
           variant="outlined"
           color="secondary"
@@ -55,10 +70,7 @@ export default function Create() {
         <TextField
           value={details}
           onChange={(event) => setDetails(event.target.value)}
-          sx={{
-            my: 2,
-            display: "block",
-          }}
+          sx={classes.field}
           label="Details"
           variant="outlined"
           color="secondary"
@@ -68,6 +80,35 @@ export default function Create() {
           required
           error={isDetailsError}
         />
+
+        <FormControl sx={classes.field}>
+          <FormLabel>Note Category</FormLabel>
+          <RadioGroup
+          value={category}
+          onChange={(event) => setCategory(event.target.value)}
+        >
+          <FormControlLabel 
+            value="money" 
+            control={<Radio />} 
+            label="Money"
+          />
+          <FormControlLabel 
+            value="todos" 
+            control={<Radio />} 
+            label="Todos"
+          />
+          <FormControlLabel
+            value="remainders"
+            control={<Radio />}
+            label="Remainders"
+          />
+          <FormControlLabel 
+            value="work" 
+            control={<Radio />} 
+            label="Work"
+          />
+        </RadioGroup>
+        </FormControl>
 
         <Button
           type="submit"
