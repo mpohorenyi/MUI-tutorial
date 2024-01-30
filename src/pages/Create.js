@@ -14,9 +14,9 @@ export default function Create() {
         Create a New Note
       </Typography>
 
-      <Button 
-        type="submit" 
-        color="secondary"
+      <Button
+        type="submit"
+        color="primary"
         variant="contained"
         endIcon={<KeyboardArrowRightIcon />}
       >
