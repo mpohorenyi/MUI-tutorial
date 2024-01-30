@@ -11,11 +11,12 @@ import {
   Typography,
 } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { localClient } from "../localClient";
 
 export default function Create() {
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
-  const [category, setCategory] = useState('todos');
+  const [category, setCategory] = useState("todos");
 
   const [isTitleError, setIsTitleError] = useState(false);
   const [isDetailsError, setIsDetailsError] = useState(false);
@@ -37,7 +38,7 @@ export default function Create() {
       return;
     }
 
-    console.log(title, details);
+    localClient.add("notes", { title, details, category });
 
     setTitle("");
     setDetails("");
@@ -84,30 +85,18 @@ export default function Create() {
         <FormControl sx={classes.field}>
           <FormLabel>Note Category</FormLabel>
           <RadioGroup
-          value={category}
-          onChange={(event) => setCategory(event.target.value)}
-        >
-          <FormControlLabel 
-            value="money" 
-            control={<Radio />} 
-            label="Money"
-          />
-          <FormControlLabel 
-            value="todos" 
-            control={<Radio />} 
-            label="Todos"
-          />
-          <FormControlLabel
-            value="remainders"
-            control={<Radio />}
-            label="Remainders"
-          />
-          <FormControlLabel 
-            value="work" 
-            control={<Radio />} 
-            label="Work"
-          />
-        </RadioGroup>
+            value={category}
+            onChange={(event) => setCategory(event.target.value)}
+          >
+            <FormControlLabel value="money" control={<Radio />} label="Money" />
+            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+            <FormControlLabel
+              value="remainders"
+              control={<Radio />}
+              label="Remainders"
+            />
+            <FormControlLabel value="work" control={<Radio />} label="Work" />
+          </RadioGroup>
         </FormControl>
 
         <Button
