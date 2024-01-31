@@ -13,6 +13,13 @@ import {
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { localClient } from "../localClient";
 
+const categories = {
+  money: "Money",
+  todos: "Todos",
+  remainders: "Remainders",
+  work: "Work",
+};
+
 export const Create = () => {
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
@@ -88,14 +95,9 @@ export const Create = () => {
             value={category}
             onChange={(event) => setCategory(event.target.value)}
           >
-            <FormControlLabel value="money" control={<Radio />} label="Money" />
-            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
-            <FormControlLabel
-              value="remainders"
-              control={<Radio />}
-              label="Remainders"
-            />
-            <FormControlLabel value="work" control={<Radio />} label="Work" />
+            {Object.entries(categories).map(([key, value]) => (
+              <FormControlLabel value={key} control={<Radio color="secondary" />} label={value} />
+            ))}
           </RadioGroup>
         </FormControl>
 
