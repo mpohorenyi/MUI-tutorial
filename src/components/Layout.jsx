@@ -1,5 +1,5 @@
-import { AddCircleOutlined, SubjectOutlined } from "@mui/icons-material";
-import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography } from "@mui/material";
+import { AddCircleOutlined, EventNoteOutlined, SubjectOutlined } from "@mui/icons-material";
+import { AppBar, Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
 
@@ -8,7 +8,6 @@ const classes = {
     display: "flex",
   },
   page: {
-    backgroundColor: "#f9f9f9",
     width: "100%",
   },
   drawer: {
@@ -16,6 +15,12 @@ const classes = {
   },
   active: {
     backgroundColor: "#f4f4f4",
+  },
+  appBar: {
+    width: `calc(100% - 240px)`,
+  },
+  toolBar: {
+    marginBottom: 2,
   },
 };
 
@@ -37,8 +42,15 @@ export const Layout = ({ children }) => {
   const { pathname } = useLocation();
 
   return (
-    <Box sx={classes.root}>
-      {/* app bar */}
+    <Box sx={classes.root} position="static">
+      <AppBar sx={classes.appBar}>
+        <Toolbar sx={{ gap: 2 }}>
+          <EventNoteOutlined />
+          <Typography variant="h6" component="div">
+            Welcome
+          </Typography>
+        </Toolbar>
+      </AppBar>
 
       <Drawer
         sx={classes.drawer}
@@ -46,7 +58,7 @@ export const Layout = ({ children }) => {
         anchor="left"
         PaperProps={{ sx: classes.drawer }}
       >
-        <Typography variant="h5">
+        <Typography variant="h5" sx={{ p: 2 }} >
           Menu
         </Typography>
 
@@ -68,6 +80,7 @@ export const Layout = ({ children }) => {
       </Drawer>
 
       <Box sx={classes.page}>
+        <Toolbar sx={classes.toolBar}/>
         {children}
       </Box>
     </Box>
