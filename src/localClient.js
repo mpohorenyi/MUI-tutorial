@@ -20,7 +20,14 @@ export const localClient = {
       : 1;
 
     existingData.push({ id: newId, ...data });
-    window.localStorage.setItem(key, JSON.stringify(existingData, null, 2));
+    localClient.write(key, existingData);
+  },
+
+  delete: (key, id) => {
+    const existingData = localClient.read(key);
+    const filteredData = existingData.filter((item) => item.id !== id);
+
+    localClient.write(key, filteredData);
   },
 
   init: (key, initialData) => {

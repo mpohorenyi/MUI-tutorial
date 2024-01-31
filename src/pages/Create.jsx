@@ -13,7 +13,7 @@ import {
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { localClient } from "../localClient";
 
-export default function Create() {
+export const Create = () => {
   const [title, setTitle] = useState("");
   const [details, setDetails] = useState("");
   const [category, setCategory] = useState("todos");
