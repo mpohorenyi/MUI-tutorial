@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { localClient } from "../localClient";
-import { Container, Grid, Paper } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { NoteCard } from "../components/NoteCard";
 
 export const Notes = () => {
