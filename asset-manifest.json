@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "./static/css/main.c226e182.chunk.css",
-    "main.js": "./static/js/main.a63b1098.chunk.js",
-    "main.js.map": "./static/js/main.a63b1098.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.f741f338.js",
-    "runtime-main.js.map": "./static/js/runtime-main.f741f338.js.map",
-    "static/js/2.1a20995b.chunk.js": "./static/js/2.1a20995b.chunk.js",
-    "static/js/2.1a20995b.chunk.js.map": "./static/js/2.1a20995b.chunk.js.map",
-    "index.html": "./index.html",
-    "static/css/main.c226e182.chunk.css.map": "./static/css/main.c226e182.chunk.css.map",
-    "static/js/2.1a20995b.chunk.js.LICENSE.txt": "./static/js/2.1a20995b.chunk.js.LICENSE.txt"
+    "main.css": "/MUI-tutorial/static/css/main.c226e182.chunk.css",
+    "main.js": "/MUI-tutorial/static/js/main.a63b1098.chunk.js",
+    "main.js.map": "/MUI-tutorial/static/js/main.a63b1098.chunk.js.map",
+    "runtime-main.js": "/MUI-tutorial/static/js/runtime-main.860231f0.js",
+    "runtime-main.js.map": "/MUI-tutorial/static/js/runtime-main.860231f0.js.map",
+    "static/js/2.1a20995b.chunk.js": "/MUI-tutorial/static/js/2.1a20995b.chunk.js",
+    "static/js/2.1a20995b.chunk.js.map": "/MUI-tutorial/static/js/2.1a20995b.chunk.js.map",
+    "index.html": "/MUI-tutorial/index.html",
+    "static/css/main.c226e182.chunk.css.map": "/MUI-tutorial/static/css/main.c226e182.chunk.css.map",
+    "static/js/2.1a20995b.chunk.js.LICENSE.txt": "/MUI-tutorial/static/js/2.1a20995b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.f741f338.js",
+    "static/js/runtime-main.860231f0.js",
     "static/js/2.1a20995b.chunk.js",
     "static/css/main.c226e182.chunk.css",
     "static/js/main.a63b1098.chunk.js"
